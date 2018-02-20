@@ -48,7 +48,7 @@ resource "aws_iam_policy_attachment" "codebuild_policy_attachment" {
   roles      = ["${aws_iam_role.codebuild_role.id}"]
 }
 
-resource "aws_codebuild_project" "${var.codebuild_project_name}" {
+resource "aws_codebuild_project" "foo" {
   name         = "${var.codebuild_project_name}"
   description  = "${var.codebuild_project_description}"
   build_timeout      = "5"
