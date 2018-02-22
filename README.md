@@ -25,9 +25,13 @@ Inputs
 ------
 
 **codebuild_project_name** - The name to give the CodeBuild Project
+
 **codebuild_project_description** - Description to give the CodeBuild Project
+
 **codebuild_source_type** - 
+
 **codebuild_source_location** - 
+
 **codebuild_image** -
 
 
