@@ -36,3 +36,8 @@ Outputs
 
 **codebuild_role_id** - ID of the IAM Role assigned to the CodeBuild Project
 
+
+Known Issues
+------------
+
+Terraform does not presently support VPC configuration (or subnet & security_groups) - until it does, they require manual configuration using the AWS Console.
