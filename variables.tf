@@ -9,3 +9,7 @@ variable "codebuild_image" {
 variable "codebuild_source_type" {}
 
 variable "codebuild_source_location" {}
+
+output "codebuild_role_id" {
+    value = "${aws_iam_role.codebuild_role.id}"
+}

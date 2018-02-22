@@ -48,13 +48,6 @@ resource "aws_iam_policy_attachment" "codebuild_policy_attachment" {
   roles      = ["${aws_iam_role.codebuild_role.id}"]
 }
 
-# TODO: move this policy attachment out - anything but the bare minimum must be handled externally (by the consumer)
-resource "aws_iam_policy_attachment" "codebuild_policy_attachment2" {
-  name       = "codebuild-policy-attachment2"
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-  roles      = ["${aws_iam_role.codebuild_role.id}"]
-}
-
 resource "aws_codebuild_project" "foo" {
   name         = "${var.codebuild_project_name}"
   description  = "${var.codebuild_project_description}"
