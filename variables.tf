@@ -10,6 +10,12 @@ variable "codebuild_source_type" {}
 
 variable "codebuild_source_location" {}
 
+variable "codebuild_vpc_id" {}
+
+variable "codebuild_subnets" {}
+
+variable "codebuild_security_group_ids" {}
+
 output "codebuild_role_id" {
     value = "${aws_iam_role.codebuild_role.id}"
 }

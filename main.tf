@@ -62,21 +62,17 @@ resource "aws_codebuild_project" "foo" {
     compute_type = "BUILD_GENERAL1_SMALL"
     image        = "${var.codebuild_image}"
     type         = "LINUX_CONTAINER"
-
-#    environment_variable {
-#      "name"  = "SOME_KEY1"
-#      "value" = "SOME_VALUE1"
-#    }
-#
-#    environment_variable {
-#      "name"  = "SOME_KEY2"
-#      "value" = "SOME_VALUE2"
-#    }
   }
 
   source {
     type     = "${var.codebuild_source_type}"
     location = "${var.codebuild_source_location}"
+  }
+
+  vpc_config {
+    vpc_id = "${var.codebuild_vpc_id}"
+    subnets = "${var.codebuild_subnets}"
+    security_group_ids = "${var.codebuild_security_group_ids}"
   }
 
   tags {
