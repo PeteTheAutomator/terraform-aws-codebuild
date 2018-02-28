@@ -27,15 +27,21 @@ module "codebuild" {
 Inputs
 ------
 
-**codebuild_project_name** - The name to give the CodeBuild Project
+**codebuild_project_name** - (Required) The projects name.
 
-**codebuild_project_description** - Description to give the CodeBuild Project
+**codebuild_project_description** - (Optional) A short description of the project.
 
-**codebuild_source_type** - 
+**codebuild_source_type** - (Required) The type of repository that contains the source code to be built. Valid values for this parameter are: CODECOMMIT, CODEPIPELINE, GITHUB, BITBUCKET or S3.
 
-**codebuild_source_location** - 
+**codebuild_source_location** - (Required) Information about the project's input source code.
 
-**codebuild_image** -
+**codebuild_image** -  (Required) The image identifier of the Docker image to use for this build project [list of Docker images provided by AWS CodeBuild.](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html). You can read more about the AWS curated environment images in the documentation.
+
+**codebuild_vpc_id** - (Required) The ID of the VPC within which to run builds.
+
+**codebuild_subnets** - (Required) The subnet IDs within which to run builds.
+
+**codebuild_security_group_ids** - (Required) The security group IDs to assign to running builds.
 
 
 Outputs
