@@ -79,3 +79,13 @@ resource "aws_codebuild_project" "foo" {
     "Environment" = "Test"
   }
 }
+
+resource "aws_eip" "eip" {
+  vpc      = true
+}
+
+resource "aws_nat_gateway" "gw" {
+  allocation_id = "${aws_eip.eip.id}"
+  subnet_id     = "${var.codebuild_public_subnet_id}"
+}
+
