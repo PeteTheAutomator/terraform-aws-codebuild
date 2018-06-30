@@ -22,6 +22,8 @@ variable "codebuild_security_group_ids" {
 
 variable "codebuild_public_subnet_id" {}
 
+variable "codebuild_private_route_table_id" {}
+
 output "codebuild_role_id" {
     value = "${aws_iam_role.codebuild_role.id}"
 }

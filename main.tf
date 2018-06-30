@@ -89,3 +89,9 @@ resource "aws_nat_gateway" "gw" {
   subnet_id     = "${var.codebuild_public_subnet_id}"
 }
 
+resource "aws_route" "r" {
+  route_table_id            = "${var.codebuild_private_route_table_id}"
+  destination_cidr_block    = "0.0.0.0/0"
+  nat_gateway_id            = "${aws_nat_gateway.gw.id}"
+}
+
